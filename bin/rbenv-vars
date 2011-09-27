@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -e
+[ -n "$RBENV_DEBUG" ] && set -x
+
+find-rbenv-vars-files() {
+  if [ -e "${RBENV_ROOT}/vars" ]; then
+    echo "${RBENV_ROOT}/vars"
+  fi
+
+  local root="$(pwd)"
+  local results=""
+
+  while [ -n "$root" ]; do
+    if [ -e "${root}/.rbenv-vars" ]; then
+      results="${root}/.rbenv-vars"$'\n'"$results"
+    fi
+    root="${root%/*}"
+  done
+
+  echo -n "$results"
+}
+
+sanitize-vars() {
+  sed \
+    -e "/^[ "$'\t'"]*[A-Za-z_][0-9A-Za-z_]*=/ !d" \
+    -e "s/'/'\\\\''/g" \
+    -e "s/\(\\\\\\\$\)/'\\1'/g" \
+    -e "s/\\\\\\\\/\\\\/g" \
+    -e "s/\(\\\$[0-9A-Za-z_][0-9A-Za-z_]*\)/'\\1'/g" \
+    -e "s/\(\\\${[0-9A-Za-z_][0-9A-Za-z_]*}\)/'\\1'/g" \
+    -e "s/^[ "$'\t'"]*\([A-Za-z_][0-9A-Za-z_]*\)=\(.*\)$/export \\1='\\2'/"
+}
+
+while read file; do
+  sanitize-vars < "$file"
+done < <( find-rbenv-vars-files )
