@@ -2,12 +2,16 @@
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
+if [ -z "$RBENV_DIR" ]; then
+  export RBENV_DIR="$(pwd)"
+fi
+
 find-rbenv-vars-files() {
   if [ -e "${RBENV_ROOT}/vars" ]; then
     echo "${RBENV_ROOT}/vars"
   fi
 
-  local root="$(pwd)"
+  local root="$RBENV_DIR"
   local results=""
 
   while [ -n "$root" ]; do
