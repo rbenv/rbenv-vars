@@ -6,6 +6,11 @@ if [ -z "$RBENV_DIR" ]; then
   export RBENV_DIR="$(pwd)"
 fi
 
+if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
+  echo "rbenv-vars 1.0.0"
+  exit
+fi
+
 find-rbenv-vars-files() {
   if [ -e "${RBENV_ROOT}/vars" ]; then
     echo "${RBENV_ROOT}/vars"

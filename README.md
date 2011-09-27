@@ -40,6 +40,12 @@ directories of the current directory will be set. Variables from the
 Use the `rbenv vars` command to print all environment variables in the
 order they'll be set.
 
+## Version History
+
+**1.0.0** (September 27, 2011)
+
+* Initial public release.
+
 ## License
 
 &copy; 2011 Sam Stephenson. Released under the MIT license. See
