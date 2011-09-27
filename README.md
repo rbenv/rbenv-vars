@@ -1,6 +1,6 @@
 # rbenv-vars
 
-This is a plugin for [rbenv](https://github.com/sstephenson/rbenv.git)
+This is a plugin for [rbenv](https://github.com/sstephenson/rbenv)
 that lets you set global and project-specific environment variables
 before spawning Ruby processes.
 
