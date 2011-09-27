@@ -20,8 +20,7 @@ Define environment variables in an `.rbenv-vars` file in your project,
 one variable per line, in the format `VAR=value`. For example:
 
     RUBY_GC_MALLOC_LIMIT=50000000
-    RUBY_HEAP_FREE_MIN=4096
-    RUBY_GC_MALLOC_LIMIT=50000000
+    RUBY_HEAP_MIN_SLOTS=15000
     RUBY_FREE_MIN=4096
 
 You can perform variable substitution with the traditional `$`
