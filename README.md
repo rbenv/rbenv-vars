@@ -44,11 +44,10 @@ order they'll be set.
 
 ### Alternate Variable File
 
-It is a good idea to segregate sensitive information like passwords
-and account infomation from your public code repository.  To help with 
-this, an alternate file can be used with the filename 
-`.rbenv-vars-<yourfile>`.  The alternate file will be loaded before 
-the normal `.rbenv-vars` file.
+It is a good idea to segregate passwords and sensitive information from 
+your public code repository.  To help with this, an alternate file can 
+be used with the filename `.rbenv-vars-<yourfile>`.  The alternate file 
+will be loaded before the normal `.rbenv-vars` file.
 
 For example, your application may require an environment variable with
 a database connect string that contains a password.
@@ -61,8 +60,7 @@ Normal file: `.rbenv-vars`
 
     DB_CONNECT_STRING=postgres://dbuser:${DB_PASSWORD}@localhost/my_database
 
-In this situation, you would include `.rbenv-vars-passwords` in your .gitignore
-file.
+In this situation, you would .gitignore the `.rbenv-vars-passwords` file.
 
 ## License
 
