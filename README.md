@@ -45,9 +45,8 @@ order they'll be set.
 ### Alternate Variable File
 
 It is a good idea to segregate sensitive information like passwords
-and account infomation from your public code repository.
-
-To help with this, an alternate file can be used with the filename 
+and account infomation from your public code repository.  To help with 
+this, an alternate file can be used with the filename 
 `.rbenv-vars-<yourfile>`.  The alternate file will be loaded before 
 the normal `.rbenv-vars` file.
 
