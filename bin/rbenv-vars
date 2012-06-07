@@ -16,12 +16,12 @@ find-rbenv-vars-files() {
   shopt -s nullglob   # suppress stderr output if glob doesn't match
 
   while [ -n "$root" ]; do
-    for f in ${root}/.rbenv-vars-* ; do
-      results="$f"$'\n'"$results"      # include alternate file in results list
-    done
     if [ -e "${root}/.rbenv-vars" ]; then
       results="${root}/.rbenv-vars"$'\n'"$results"
     fi
+    for f in ${root}/.rbenv-vars-* ; do
+      results="$f"$'\n'"$results"      # include alternate file in results list
+    done
     root="${root%/*}"
   done
 
