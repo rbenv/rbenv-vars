@@ -16,6 +16,8 @@ that supports plugin bundles.)
 
 ## Usage
 
+### Variable File
+
 Define environment variables in an `.rbenv-vars` file in your project,
 one variable per line, in the format `VAR=value`. For example:
 
@@ -39,6 +41,29 @@ directories of the current directory will be set. Variables from the
 
 Use the `rbenv vars` command to print all environment variables in the
 order they'll be set.
+
+### Alternate Variable File
+
+It is a good idea to segregate sensitive information like passwords
+and account infomation from your public code repository.
+
+To help with this, an alternate file can be used with the filename 
+`.rbenv-vars-<yourfile>`.  The alternate file will be loaded before 
+the normal `.rbenv-vars` file.
+
+For example, your application may require an environment variable with
+a database connect string that contains a password.
+
+Alternate file: `.rbenv-vars-passwords`
+
+    DB_PASSWORD=mypassword
+
+Normal file: `.rbenv-vars`
+
+    DB_CONNECT_STRING=postgres://dbuser:${DB_PASSWORD}@localhost/my_database
+
+In this situation, you would include `.rbenv-vars-passwords` in your .gitignore
+file.
 
 ## License
 
