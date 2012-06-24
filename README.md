@@ -28,6 +28,14 @@ syntax. For example, to append to `GEM_PATH`:
 
     GEM_PATH=$GEM_PATH:/u/shared/gems
 
+You may also specify that a variable should **only** be set if it is
+not already defined:
+
+    JAVA_OPTS?=-server -Xmx768m -Xms768m -Xmn128m -Xss20m
+
+In the above case, `JAVA_OPTS` will only be set if `$JAVA_OPTS` is
+currently empty (ie, if `-z "$JAVA_OPTS"` is true).
+
 Spaces are allowed in values; quoting is not necessary. Expansion and
 command substitution are not allowed. Lines beginning with `#` or any
 lines not in the format VAR=value will be ignored.
