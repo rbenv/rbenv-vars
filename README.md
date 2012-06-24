@@ -33,10 +33,6 @@ variable will **only** be set if it is not already defined or is blank:
 
     JAVA_OPTS?=-server -Xmx768m -Xms768m -Xmn128m -Xss20m
 
-results in:
-
-    [[ -z "$JAVA_OPTS" ]] && export JAVA_OPTS='-server -Xmx768m -Xms768m -Xmn128m -Xss20m'
-
 In the above case, `JAVA_OPTS` will only be set if `$JAVA_OPTS` is
 currently empty (ie, if `-z "$JAVA_OPTS"` is true).
 
