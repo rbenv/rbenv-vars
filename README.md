@@ -50,11 +50,16 @@ order they'll be set.
 
 ## Version History
 
+**1.1.0** (June 25, 2012)
+
+* Added support for conditional variable assignments using
+  `?=`. Thanks to Scott Gonyea for the patch.
+
 **1.0.0** (September 27, 2011)
 
 * Initial public release.
 
 ## License
 
-&copy; 2011 Sam Stephenson. Released under the MIT license. See
+&copy; 2012 Sam Stephenson. Released under the MIT license. See
 `LICENSE` for details.
