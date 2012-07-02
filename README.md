@@ -6,9 +6,17 @@ before spawning Ruby processes.
 
 ## Installation
 
-To install rbenv-vars, clone this repository into your
-`~/.rbenv/plugins` directory. (You'll need a recent version of rbenv
-that supports plugin bundles.)
+### Homebrew
+
+The easiest way to install (if you are on Mac OSX) is via the [Homebrew]
+(http://mxcl.github.com/homebrew/) package manager:
+
+    $ brew update
+    $ brew install rbenv-vars
+
+### GitHub
+
+Otherwise, clone rbenv-vars to the `$HOME/.rbenv/plugins` directory:
 
     $ mkdir -p ~/.rbenv/plugins
     $ cd ~/.rbenv/plugins
