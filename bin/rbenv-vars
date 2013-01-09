@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+#
+# Usage: rbenv vars
+#
+# Prints all rbenv-vars environment variables applicable to the
+# current working directory in the order they will be set. The output
+# format is a script that may be passed to `eval` in a Bourne-
+# compatible shell.
+#
+# For more information on rbenv-vars, see:
+# https://github.com/sstephenson/rbenv-vars#readme
+
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
