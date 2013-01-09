@@ -42,5 +42,7 @@ sanitize-vars() {
 }
 
 while read file; do
+  echo "# $file"
   { cat "$file"; echo; } | sanitize-vars
+  echo
 done < <( find-rbenv-vars-files )
