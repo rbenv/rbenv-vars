@@ -50,6 +50,16 @@ order they'll be set.
 
 ## Version History
 
+**1.2.0** (January 9, 2013)
+
+* Fixed a bug where source files without a trailing newline could
+  concatenate improperly with other source files on systems with GNU
+  sed.
+* Changed the output of `rbenv vars` to include the source file path
+  in a comment above its variables, and an empty line between each
+  source file, for easier debugging.
+* Added support for `rbenv help vars` with rbenv 0.4.0.
+
 **1.1.0** (June 25, 2012)
 
 * Added support for conditional variable assignments using

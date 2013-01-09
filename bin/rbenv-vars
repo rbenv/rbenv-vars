@@ -18,7 +18,7 @@ if [ -z "$RBENV_DIR" ]; then
 fi
 
 if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
-  echo "rbenv-vars 1.1.0"
+  echo "rbenv-vars 1.2.0"
   exit
 fi
 
