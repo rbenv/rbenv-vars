@@ -30,6 +30,10 @@ find-rbenv-vars-files() {
   local root="$RBENV_DIR"
   local results=""
 
+  if [ -n "${RBENV_VARS}" ] && [ -e "$RBENV_VARS" ]; then
+    results="${RBENV_VARS}"$'\n'
+  fi
+
   while [ -n "$root" ]; do
     if [ -e "${root}/.rbenv-vars" ]; then
       results="${root}/.rbenv-vars"$'\n'"$results"
