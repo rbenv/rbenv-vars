@@ -43,7 +43,7 @@ lines not in the format VAR=value will be ignored.
 Variables will be read from the following files, in the following order:
 * ~/.rbenv/vars
 * .rbenv-vars in any parent directories of the current directory
-* .rbenv_vars in the current directory
+* .rbenv-vars in the current directory
 * $RBENV_VARS
 
 Use the `rbenv vars` command to print all environment variables in the
