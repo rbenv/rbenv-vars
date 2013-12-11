@@ -13,21 +13,13 @@
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
 
-if [ -z "$RBENV_DIR" ]; then
-  export RBENV_DIR="$(pwd)"
-fi
-
 if [ "$1" = "--version" ] || [ "$1" = "-v" ]; then
   echo "rbenv-vars 1.2.0"
   exit
 fi
 
-find-rbenv-vars-files() {
-  if [ -e "${RBENV_ROOT}/vars" ]; then
-    echo "${RBENV_ROOT}/vars"
-  fi
-
-  local root="$RBENV_DIR"
+traverse-rbenv-vars-files() {
+  local root="$1"
   local results=""
 
   while [ -n "$root" ]; do
@@ -37,7 +29,20 @@ find-rbenv-vars-files() {
     root="${root%/*}"
   done
 
-  echo -n "$results"
+  if [ -n "$results" ]; then
+    echo -n "$results"
+  else
+    return 1
+  fi
+}
+
+find-rbenv-vars-files() {
+  if [ -e "${RBENV_ROOT}/vars" ]; then
+    echo "${RBENV_ROOT}/vars"
+  fi
+
+  traverse-rbenv-vars-files "$RBENV_DIR" ||
+  [ "$RBENV_DIR" = "$PWD" ] || traverse-rbenv-vars-files "$PWD"
 }
 
 sanitize-vars() {
