@@ -16,8 +16,7 @@ that supports plugin bundles.)
 
 ## Usage
 
-Define environment variables in an `.rbenv-vars` file in your project,
-one variable per line, in the format `VAR=value`. For example:
+Define environment variables in an `.rbenv-vars` or `.env` (for compatibility with [Foreman] (https://github.com/ddollar/foreman)) file in your project, one variable per line, in the format `VAR=value`. For example:
 
     RUBY_GC_MALLOC_LIMIT=50000000
     RUBY_HEAP_MIN_SLOTS=15000
