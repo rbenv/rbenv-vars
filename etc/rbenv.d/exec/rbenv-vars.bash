@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-eval "$(rbenv-vars)"
+eval "$(rbenv vars)"
 
