@@ -8,7 +8,7 @@
 # compatible shell.
 #
 # For more information on rbenv-vars, see:
-# https://github.com/sstephenson/rbenv-vars#readme
+# https://github.com/rbenv/rbenv-vars#readme
 
 set -e
 [ -n "$RBENV_DEBUG" ] && set -x
