@@ -6,13 +6,9 @@ before spawning Ruby processes.
 
 ## Installation
 
-To install rbenv-vars, clone this repository into your
-`~/.rbenv/plugins` directory. (You'll need a recent version of rbenv
-that supports plugin bundles.)
+Make sure you have the latest rbenv and ruby-build versions, then run:
 
-    $ mkdir -p ~/.rbenv/plugins
-    $ cd ~/.rbenv/plugins
-    $ git clone https://github.com/rbenv/rbenv-vars.git
+    git clone https://github.com/rbenv/rbenv-vars.git $(rbenv root)/plugins/rbenv-vars
 
 ## Usage
 
