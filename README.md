@@ -6,7 +6,7 @@ before spawning Ruby processes.
 
 ## Installation
 
-Make sure you have the latest rbenv and ruby-build versions, then run:
+Make sure you have the latest version of rbenv, then run:
 
     git clone https://github.com/rbenv/rbenv-vars.git $(rbenv root)/plugins/rbenv-vars
 
