@@ -48,6 +48,10 @@ directories of the current directory will be set. Variables from the
 Use the `rbenv vars` command to print all environment variables in the
 order they'll be set.
 
+If using Phusion Passenger, specify the `passenger_ruby`directive to point at the shims directory:
+
+    passenger_ruby /home/user/.rbenv/shims/ruby;
+
 ## Version History
 
 **1.2.0** (January 9, 2013)
