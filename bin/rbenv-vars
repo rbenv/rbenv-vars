@@ -25,6 +25,8 @@ traverse-rbenv-vars-files() {
   while [ -n "$root" ]; do
     if [ -e "${root}/.rbenv-vars" ]; then
       results="${root}/.rbenv-vars"$'\n'"$results"
+    elif [ -e "${root}/.env" ]; then
+      results="${root}/.env"$'\n'"$results"
     fi
     root="${root%/*}"
   done
