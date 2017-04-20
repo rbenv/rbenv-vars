@@ -22,6 +22,10 @@ traverse-rbenv-vars-files() {
   local root="$1"
   local results=""
 
+  if [ -n "${RBENV_VARS}" ] && [ -e "$RBENV_VARS" ]; then
+    results="${RBENV_VARS}"$'\n'
+  fi
+
   while [ -n "$root" ]; do
     if [ -e "${root}/.rbenv-vars" ]; then
       results="${root}/.rbenv-vars"$'\n'"$results"
