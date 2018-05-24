@@ -36,7 +36,7 @@ Spaces are allowed in values; quoting is not necessary. Expansion and
 command substitution are not allowed. Lines beginning with `#` or any
 lines not in the format VAR=value will be ignored.
 
-Variables specified in the `~/.rbenv/vars` file will be set
+Variables specified in the `$(rbenv root)/vars` file will be set
 first. Then variables specified in `.rbenv-vars` files in any parent
 directories of the current directory will be set. Variables from the
 `.rbenv-vars` file in the current directory are set last.
