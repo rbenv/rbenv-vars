@@ -41,6 +41,10 @@ find-rbenv-vars-files() {
     echo "${RBENV_ROOT}/vars"
   fi
 
+  if [ -e "${RBENV_ROOT}/versions/${RBENV_VERSION}/vars" ]; then
+    echo "${RBENV_ROOT}/versions/${RBENV_VERSION}/vars"
+  fi
+
   traverse-rbenv-vars-files "$RBENV_DIR" ||
   [ "$RBENV_DIR" = "$PWD" ] || traverse-rbenv-vars-files "$PWD"
 }

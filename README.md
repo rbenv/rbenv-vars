@@ -37,7 +37,8 @@ command substitution are not allowed. Lines beginning with `#` or any
 lines not in the format VAR=value will be ignored.
 
 Variables specified in the `~/.rbenv/vars` file will be set
-first. Then variables specified in `.rbenv-vars` files in any parent
+first, followed by variables in `~/.rbenv/versions/{version}/vars`. 
+Then variables specified in `.rbenv-vars` files in any parent
 directories of the current directory will be set. Variables from the
 `.rbenv-vars` file in the current directory are set last.
 
